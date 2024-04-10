@@ -33,7 +33,7 @@ class VectorizationEngine:
         print("Embedding in progress...")
 
         for doc in documents:
-            PineconeVectorStore.from_documents(
+            PineconeVectorStore.from_texts(
                 doc.page_content,
                 self.embeddings_service,
                 index_name=self.pinecone_index,
