@@ -26,19 +26,18 @@ class VectorizationEngine:
         # if not os.path.isdir('./train/faq.csv'):
         #     raise FileNotFoundError("Directory not found at specified document path.")
 
-        loader = CSVLoader(file_path='./train/faq.csv', encoding='utf8')
+        loader = CSVLoader(file_path='./train/more.csv', encoding='utf8')
         documents = loader.load()
 
         print(f"Document Length: {len(documents)}")
         print("Embedding in progress...")
 
-        for doc in documents:
-            PineconeVectorStore.from_texts(
-                doc.page_content,
-                self.embeddings_service,
-                index_name=self.pinecone_index,
-                namespace=self.pinecone_namespace,
-            )
+        PineconeVectorStore.from_documents(
+            documents,
+            self.embeddings_service,
+            index_name=self.pinecone_index,
+            namespace=self.pinecone_namespace,
+        )
         print("Embedding finished.")
 
 
