@@ -47,7 +47,7 @@ def load_environment():
         "openai_api_key": os.getenv("OPENAI_API_KEY", "OPENAI_API_KEY"),
         "pinecone_api_key": os.getenv("PINECONE_API_KEY", "PINECONE_API_KEY"),
         "pinecone_index": os.getenv("PINECONE_INDEX", "PINECONE_INDEX"),
-        "pinecone_namespace": os.getenv("PINECONE_NAMESPACE", "Mastery_Namespace"),
+        "pinecone_namespace": os.getenv("PINECONE_NAMESPACE", "PINECONE_NAMESPACE"),
     }
 
 
