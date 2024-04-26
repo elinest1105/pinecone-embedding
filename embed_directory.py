@@ -26,7 +26,7 @@ class VectorizationEngine:
         # if not os.path.isdir('./train/faq.csv'):
         #     raise FileNotFoundError("Directory not found at specified document path.")
 
-        loader = CSVLoader(file_path='./train/more.csv', encoding='utf8')
+        loader = CSVLoader(file_path='./train/documents.csv', encoding='utf8')
         documents = loader.load()
 
         print(f"Document Length: {len(documents)}")
